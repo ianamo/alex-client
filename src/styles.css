@@ -1,0 +1,166 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+header span {
+    font-size: 1.5rem;
+    margin: 0 5%;
+    margin-right: 20%;
+    font-family: 'Gruppo', cursive;
+}
+
+header ul {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+.user-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-card {
+    box-sizing: border-box;
+    height: 255px;
+    width: 250px;
+    text-align: center;
+    padding: 15px 25px;
+    box-shadow: black 3px 3px 6px;
+    margin: 3%;
+     border-radius: 8px;
+}
+
+.user-card img {
+    width: 100px;
+    border-radius: 100%;
+    border: solid 2px dashed black;
+}
+
+.search {
+    width: fit-content;
+    margin: 1% auto;
+}
+
+.input-box {
+    width: fit-content;
+    margin: auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .gallery-book {
+    margin: 3%;
+    box-shadow: black 4px 4px 6px;
+  }
+
+  .book-card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+  }
+
+  .book-details {
+    margin-top: 25px;
+  }
+  
+  .book-image {
+    text-align: center;
+  }
+  
+  .book-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .book-cover{
+    width: 128px;
+    height: 188px;
+  }
+  
+  .book-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .book-author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666;
+    margin-top: 0;
+  }
+  
+  .book-description {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: #333;
+  }
+
+  .user-library h2 {
+    text-align: center;
+  }
+
+  .add-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-display {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dashboard-container{
+    width: 85vw;
+    margin: auto;
+  }
+
+  .dashboard-container h3 {
+    text-align: center;
+  }
+
+  .dashboard-container ul {
+    list-style-type: none;
+    margin: 45px 0;
+  }
+
+  .dashboard-container ul li {
+    box-shadow: 7px 4px;
+    border-radius: 3px;
+    width: fit-content;
+    margin: 3% 0;
+    padding: 6px 3px;
+  }
+
+  #google-icon {
+    vertical-align: bottom;
+    color: red;
+    height: 16px;
+  }
+
+  .yes-no-btn {
+    display: inline;
+    padding: 0 5px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 4% 0;
+  }
