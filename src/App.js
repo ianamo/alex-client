@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:3001/auth/google/login/success", {
+      fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
