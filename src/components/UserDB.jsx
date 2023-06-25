@@ -13,7 +13,7 @@ export default function UserDB () {
     }
 
     useEffect(()=>{
-        axios.get('http://localhost:3001/users')
+        axios.get('https://young-reaches-15944-2791974435fd.herokuapp.com/users')
         .then(foundUsers=> setUsers(foundUsers.data));
     },[]);
 

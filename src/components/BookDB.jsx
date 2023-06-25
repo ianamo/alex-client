@@ -14,13 +14,13 @@ export default function BookDB() {
     const nav = useNavigate();
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/books")
+        axios.get("https://young-reaches-15944-2791974435fd.herokuapp.com/books")
         .then(res=>
             getBooks(res.data));
     },[]);
 
     function registerBook() {
-        axios.post('http://localhost:3001/books', {isbn: registerIsbn})
+        axios.post('https://young-reaches-15944-2791974435fd.herokuapp.com/books', {isbn: registerIsbn})
         .then(response => {
             if (response.data == "Success") {
             setTimeout(() => {
