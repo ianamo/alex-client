@@ -10,7 +10,7 @@ import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import './styles.css'
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 function App() {
 
@@ -18,20 +18,20 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      // fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
-      //   method: "GET",
-      //   credentials: "include",
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //   },
-      // })
-      axios.get("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success")
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
+      fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+      // axios.get("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success")
+      //   .then((response) => {
+      //     if (response.status === 200) return response.json();
+      //     throw new Error("authentication has been failed!");
+      //   })
         .then((resObject) => {
           console.log(resObject.user);
           setUser(resObject.user);
