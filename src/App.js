@@ -17,8 +17,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getUser = () => {
-      fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
+    async function getUser() {
+      const response = await fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -26,21 +26,41 @@ function App() {
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
         },
-      })
-      // axios.get("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success")
-      //   .then((response) => {
-      //     if (response.status === 200) return response.json();
-      //     throw new Error("authentication has been failed!");
-      //   })
-        .then((resObject) => {
-          console.log(resObject.user);
-          setUser(resObject.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
+      });
+      if (response.ok) {
+        const myUser = await response.json();
+        setUser(myUser);
+      } else {
+        const message = "An error has occurred! " + response.status;
+        throw new Error (message); 
+      }
+    }
+
+    // const getUser = () => {
+    //   fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
+    //     method: "GET",
+    //     credentials: "include",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Credentials": true,
+    //     },
+    //   })
+    //   // axios.get("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success")
+    //   //   .then((response) => {
+    //   //     if (response.status === 200) return response.json();
+    //   //     throw new Error("authentication has been failed!");
+    //   //   })
+    //     .then((resObject) => {
+    //       console.log(resObject.user);
+    //       setUser(resObject.user);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // };
+
+    getUser().catch(error => error.message);
   }, []);
 
   return (
