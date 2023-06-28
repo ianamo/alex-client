@@ -21,11 +21,11 @@ function App() {
       const response = await fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
         method: "GET",
         credentials: "include",
-        // headers: {
-        //   Accept: "application/json",
-        //   "Content-Type": "application/json",
-        //   "Access-Control-Allow-Credentials": true,
-        // },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
       });
       if (response.ok) {
         const myUser = await response.json();
