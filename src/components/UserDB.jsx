@@ -13,7 +13,7 @@ export default function UserDB () {
     }
 
     useEffect(()=>{
-        axios.get('https://young-reaches-15944-2791974435fd.herokuapp.com/users')
+        axios.get('https://alexandria-api.com/users')
         .then(foundUsers=> setUsers(foundUsers.data));
     },[]);
 

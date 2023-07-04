@@ -6,18 +6,18 @@ import { useParams } from 'react-router-dom';
 export default function UserLibrary() {
     const {name} = useParams();
     const [userBooks, setUserBooks] = useState([]);
-    const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+    //const displayName = name.charAt(0).toUpperCase() + name.slice(1);
     const [username, setUsername] = useState("");
 
     useEffect(()=>{
-        const url = "https://young-reaches-15944-2791974435fd.herokuapp.com/users/"+name+"/library";
+        const url = "https://alexandria-api.com/users/"+name+"/library";
         axios.get(url)
         .then(userLibraryItems=>{
             const libraryData = userLibraryItems.data;
             setUserBooks(libraryData.map(item=>item.book));
         });
 
-        const userUrl = 'https://young-reaches-15944-2791974435fd.herokuapp.com/users/'+name;
+        const userUrl = 'https://alexandria-api.com/users/'+name;
         axios.get(userUrl)
         .then(userInfo=>{
             setUsername(userInfo.data.username);

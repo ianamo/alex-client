@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     async function getUser() {
-      const response = await fetch("https://young-reaches-15944-2791974435fd.herokuapp.com/auth/google/login/success", {
+      const response = await fetch("https://alexandria-api.com/auth/google/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
