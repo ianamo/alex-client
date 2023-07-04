@@ -14,7 +14,7 @@ export default function BookDB() {
     const nav = useNavigate();
 
     useEffect(()=>{
-        axios.get("https://alexandria-api.com/books")
+        axios.get("https://www.alexandria-api.com/books")
         .then(res=>
             getBooks(res.data));
     },[]);
