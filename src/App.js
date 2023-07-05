@@ -29,7 +29,7 @@ function App() {
       });
       if (response.ok) {
         const myUser = await response.json();
-        setUser(myUser);
+        setUser(myUser.user);
       } else {
         const message = "An error has occurred! " + response.status;
         throw new Error (message); 
