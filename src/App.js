@@ -61,6 +61,7 @@ function App() {
     // };
 
     getUser().catch(error => error.message);
+    console.log(user);
   }, []);
 
   return (
