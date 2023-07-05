@@ -24,7 +24,7 @@ export default function BookCard(props) {
         }
 
         if (props.user) {
-            const checkUrl = 'https://alexandria-api.com/users/'+props.user.gid+'/library/check/'+isbn;
+            const checkUrl = 'https://www.alexandria-api.com/users/'+props.user.gid+'/library/check/'+isbn;
             axios.get(checkUrl)
             .then(
                 result=>{
@@ -36,14 +36,14 @@ export default function BookCard(props) {
             )
         }
 
-        const URL = 'https://alexandria-api.com/books/' + isbn;
+        const URL = 'https://www.alexandria-api.com/books/' + isbn;
         axios.get(URL)
         .then(book=>{
             setBookData(book.data);
         });
 
         if (name) { // check to see if book is available
-            const isRequestedUrl = 'https://alexandria-api.com/users/'+name+'/library/check/'+isbn;
+            const isRequestedUrl = 'https://www.alexandria-api.com/users/'+name+'/library/check/'+isbn;
             axios.get(isRequestedUrl)
             .then(
                 response=>{
@@ -58,7 +58,7 @@ export default function BookCard(props) {
     }, [isbn]);
 
     function addBook(user) {
-        const url = 'https://alexandria-api.com/users/'+user.gid+'/library';
+        const url = 'https://www.alexandria-api.com/users/'+user.gid+'/library';
             axios.post(url,
             {user:user.gid,
             isbn:isbn});
@@ -68,7 +68,7 @@ export default function BookCard(props) {
     }
 
     function makeRequest(user) {
-        const url = 'https://alexandria-api.com/users/'+name+'/library/request';
+        const url = 'https://www.alexandria-api.com/users/'+name+'/library/request';
         axios.patch(url,
             {borrower:user.gid,
                 displayName: user.username,
@@ -78,7 +78,7 @@ export default function BookCard(props) {
     }
 
     function deleteBook(name,isbn) {
-        const delUrl = 'https://alexandria-api.com/users/'+name+'/library/'+isbn;
+        const delUrl = 'https://www.alexandria-api.com/users/'+name+'/library/'+isbn;
         axios.delete(delUrl);
     }
 

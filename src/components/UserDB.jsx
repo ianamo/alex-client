@@ -13,7 +13,7 @@ export default function UserDB () {
     }
 
     useEffect(()=>{
-        axios.get('https://alexandria-api.com/users')
+        axios.get('https://www.alexandria-api.com/users')
         .then(foundUsers=> setUsers(foundUsers.data));
     },[]);
 

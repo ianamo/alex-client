@@ -5,7 +5,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 export default function Header(props) {
 
     function google () {
-        window.open("https://alexandria-api.com/auth/google", "_self");
+        window.open("https://www.alexandria-api.com/auth/google", "_self");
       }
 
     return (

@@ -12,7 +12,7 @@ export default function Dashboard(props) {
 
     useEffect(()=>{
         // figure out if I have any loan requests
-        const reqUrl = 'https://alexandria-api.com/users/'+props.user.gid+'/library/request';
+        const reqUrl = 'https://www.alexandria-api.com/users/'+props.user.gid+'/library/request';
         axios.get(reqUrl)
         .then(foundRequests=>{
             const requestData = foundRequests.data;
@@ -21,14 +21,14 @@ export default function Dashboard(props) {
 
         // figure out if I have any outstanding loans
 
-        const loanUrl = 'https://alexandria-api.com/users/'+props.user.gid+'/library/loan';
+        const loanUrl = 'https://www.alexandria-api.com/users/'+props.user.gid+'/library/loan';
         axios.get(loanUrl)
         .then(foundLoans=>{
             const loanData = foundLoans.data;
             setLoans(loanData.map(loan=>loan));
         });
 
-        const loanedBooksUrl = 'https://alexandria-api.com/users/'+props.user.gid+'/loans';
+        const loanedBooksUrl = 'https://www.alexandria-api.com/users/'+props.user.gid+'/loans';
         axios.get(loanedBooksUrl)
         .then(foundLoans=>{
             const loanedBookData = foundLoans.data;
@@ -38,7 +38,7 @@ export default function Dashboard(props) {
     },[]);
 
     function processLoan(user, borrower, displayName, isbn, deny=false) {
-        const url = 'https://alexandria-api.com/users/'+props.user.gid+'/library/loan';
+        const url = 'https://www.alexandria-api.com/users/'+props.user.gid+'/library/loan';
         axios.patch(url, {user:user, borrower:borrower, borrowerDisplayName:displayName, isbn:isbn,deny:deny});
         setRequests(requests.filter(request=>{
             return request.isbn != isbn;
@@ -51,7 +51,7 @@ export default function Dashboard(props) {
     }
 
     function returnBook(user, isbn) {
-        const returnUrl = 'https://alexandria-api.com/users/'+user+'/library/return';
+        const returnUrl = 'https://www.alexandria-api.com/users/'+user+'/library/return';
         axios.patch(returnUrl, {owner:user,isbn:isbn});
         setLoanedBooks(loanedBooks.filter(loan=>{
             return loan.isbn != isbn;

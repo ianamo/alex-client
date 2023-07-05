@@ -20,7 +20,7 @@ export default function BookDB() {
     },[]);
 
     function registerBook() {
-        axios.post('https://alexandria-api.com/books', {isbn: registerIsbn})
+        axios.post('https://www.alexandria-api.com/books', {isbn: registerIsbn})
         .then(response => {
             if (response.data == "Success") {
             setTimeout(() => {

@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     async function getUser() {
-      const response = await fetch("https://alexandria-api.com/auth/google/login/success", {
+      const response = await fetch("https://www.alexandria-api.com/auth/google/login/success", {
         method: "GET",
         credentials: "include",
         headers: {

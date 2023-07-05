@@ -10,14 +10,14 @@ export default function UserLibrary() {
     const [username, setUsername] = useState("");
 
     useEffect(()=>{
-        const url = "https://alexandria-api.com/users/"+name+"/library";
+        const url = "https://www.alexandria-api.com/users/"+name+"/library";
         axios.get(url)
         .then(userLibraryItems=>{
             const libraryData = userLibraryItems.data;
             setUserBooks(libraryData.map(item=>item.book));
         });
 
-        const userUrl = 'https://alexandria-api.com/users/'+name;
+        const userUrl = 'https://www.alexandria-api.com/users/'+name;
         axios.get(userUrl)
         .then(userInfo=>{
             setUsername(userInfo.data.username);
